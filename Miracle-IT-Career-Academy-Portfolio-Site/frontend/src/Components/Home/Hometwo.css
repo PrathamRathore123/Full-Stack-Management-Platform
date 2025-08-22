@@ -1,0 +1,926 @@
+/* Hometwo.css - Modern dark theme with neon accents */
+
+:root {
+  --background-color: #F5F5F5;
+  --card-background: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --primary-color: #0F4C81;
+  --secondary-color: #00A8E8;
+  --highlight-color: #FDC500;
+  --shadow-sm: 0 2px 8px rgba(15, 76, 129, 0.3);
+  --shadow-md: 0 4px 12px rgba(15, 76, 129, 0.4);
+  --shadow-lg: 0 8px 24px rgba(15, 76, 129, 0.5);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base section styling */
+.role-section {
+  padding: 4rem 0;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.role-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-badge {
+  background: rgba(0, 168, 232, 0.1);
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 168, 232, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.animated-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.animated-subtitle {
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Tabs container */
+.tabs-container {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid #e5e7eb;
+}
+
+/* Tab navigation */
+.tab-navigation {
+  display: flex;
+  background-color: rgba(15, 76, 129, 0.1);
+  position: relative;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.25rem 1rem;
+  font-weight: 500;
+  text-align: center;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.tab-btn:hover i {
+  transform: scale(1.2);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+}
+
+.tab-btn:nth-child(2).active {
+  color: var(--secondary-color);
+}
+
+.tab-btn:nth-child(3).active {
+  color: var(--accent-student);
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.tab-btn:nth-child(1).active ~ .tab-indicator {
+  left: 0;
+  width: 33.33%;
+}
+
+.tab-btn:nth-child(2).active ~ .tab-indicator {
+  left: 33.33%;
+  width: 33.33%;
+  background: var(--secondary-color);
+}
+
+.tab-btn:nth-child(3).active ~ .tab-indicator {
+  left: 66.66%;
+  width: 33.33%;
+  background: var(--accent-student);
+}
+
+/* Tab content */
+.tab-content-container {
+  padding: 2rem;
+}
+
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid layout */
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tab-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Feature list */
+.feature-list h3.role-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.role-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--accent-admin);
+  border-radius: 1px;
+}
+
+.faculty-title::after {
+  background: var(--accent-faculty);
+}
+
+.student-title::after {
+  background: var(--accent-student);
+}
+
+.feature-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Feature item */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Feature icon */
+.feature-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-dark);
+  margin-right: 1rem;
+  border-radius: 8px;
+  background: var(--accent-admin);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.feature-icon.faculty-icon {
+  background: var(--accent-faculty);
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+}
+
+.feature-icon.student-icon {
+  background: var(--accent-student);
+  box-shadow: 0 0 10px rgba(3, 218, 198, 0.5);
+}
+
+.feature-icon.pulse {
+  animation: neonPulse 2s infinite;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+}
+
+.faculty-icon.pulse {
+  animation: facultyPulse 2s infinite;
+}
+
+@keyframes facultyPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(187, 134, 252, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
+  }
+}
+
+.student-icon.pulse {
+  animation: studentPulse 2s infinite;
+}
+
+@keyframes studentPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(3, 218, 198, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(3, 218, 198, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(3, 218, 198, 0.5);
+  }
+}
+
+.feature-details h4 {
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.feature-details p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* CTA buttons */
+.feature-cta {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+  color: var(--accent-admin);
+  border: 1px solid var(--accent-admin);
+}
+
+.cta-button span {
+  margin-right: 0.5rem;
+}
+
+.cta-button i {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.cta-button:hover i {
+  transform: translateX(4px);
+}
+
+.faculty-cta {
+  color: var(--accent-faculty);
+  border-color: var(--accent-faculty);
+}
+
+.faculty-cta:hover {
+  background: rgba(187, 134, 252, 0.1);
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+}
+
+.student-cta {
+  color: var(--accent-student);
+  border-color: var(--accent-student);
+}
+
+.student-cta:hover {
+  background: rgba(3, 218, 198, 0.1);
+  box-shadow: 0 0 15px rgba(3, 218, 198, 0.3);
+}
+
+/* Animation container */
+.animation-container {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faculty-container {
+  border-color: rgba(187, 134, 252, 0.2);
+}
+
+.student-container {
+  border-color: rgba(3, 218, 198, 0.2);
+}
+
+/* Login animation */
+.login-animation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.animation-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.animation-step.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Login screen */
+.login-screen {
+  width: 85%;
+  max-width: 300px;
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.login-header {
+  background-color: rgba(0, 229, 255, 0.1);
+  color: var(--accent-admin);
+  padding: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.faculty-header {
+  background-color: rgba(187, 134, 252, 0.1);
+  color: var(--accent-faculty);
+  border-bottom: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.student-header {
+  background-color: rgba(3, 218, 198, 0.1);
+  color: var(--accent-student);
+  border-bottom: 1px solid rgba(3, 218, 198, 0.2);
+}
+
+.login-form {
+  padding: 1.5rem;
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.form-field .input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.login-button {
+  background-color: var(--accent-admin);
+  color: var(--bg-dark);
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+.login-button:hover {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+}
+
+.faculty-button {
+  background-color: var(--accent-faculty);
+}
+
+.faculty-button:hover {
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+}
+
+.student-button {
+  background-color: var(--accent-student);
+}
+
+.student-button:hover {
+  box-shadow: 0 0 15px rgba(3, 218, 198, 0.5);
+}
+
+/* Verification screen */
+.verification-screen {
+  width: 85%;
+  max-width: 300px;
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.verification-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--accent-admin);
+  color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.verification-icon.faculty-icon {
+  background-color: var(--accent-faculty);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.5);
+}
+
+.verification-icon.student-icon {
+  background-color: var(--accent-student);
+  box-shadow: 0 0 20px rgba(3, 218, 198, 0.5);
+}
+
+.verification-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.verification-code {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.verification-code span {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-admin);
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.faculty-id {
+  margin-top: 1rem;
+}
+
+.id-card {
+  width: 100px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.id-photo {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.id-info {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.enrollment-check {
+  margin-top: 1rem;
+}
+
+.enrollment-status {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(3, 218, 198, 0.1);
+  color: var(--accent-student);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  border: 1px solid rgba(3, 218, 198, 0.2);
+}
+
+.enrollment-status i {
+  margin-right: 0.5rem;
+}
+
+/* Dashboard preview */
+.dashboard-preview {
+  width: 85%;
+  max-width: 300px;
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-header {
+  background-color: rgba(0, 229, 255, 0.1);
+  color: var(--accent-admin);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.faculty-dashboard .dashboard-header {
+  background-color: rgba(187, 134, 252, 0.1);
+  color: var(--accent-faculty);
+  border-bottom: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+.student-dashboard .dashboard-header {
+  background-color: rgba(3, 218, 198, 0.1);
+  color: var(--accent-student);
+  border-bottom: 1px solid rgba(3, 218, 198, 0.2);
+}
+
+.dashboard-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.dashboard-user {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-widgets {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.widget {
+  height: 60px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.widget:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Success message */
+.success-message {
+  width: 85%;
+  max-width: 300px;
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--accent-admin);
+  color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.25rem;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    transform: scale(1);
+  }
+}
+
+.faculty-success {
+  background-color: var(--accent-faculty);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.5);
+  animation: facultySuccessPulse 2s infinite;
+}
+
+@keyframes facultySuccessPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(187, 134, 252, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+    transform: scale(1);
+  }
+}
+
+.student-success {
+  background-color: var(--accent-student);
+  box-shadow: 0 0 20px rgba(3, 218, 198, 0.5);
+  animation: studentSuccessPulse 2s infinite;
+}
+
+@keyframes studentSuccessPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(3, 218, 198, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(3, 218, 198, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(3, 218, 198, 0.5);
+    transform: scale(1);
+  }
+}
+
+.success-text {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-subtext {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Animation progress */
+.animation-progress {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.progress-dot.active {
+  background-color: var(--accent-admin);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.faculty-dot.active {
+  background-color: var(--accent-faculty);
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+}
+
+.student-dot.active {
+  background-color: var(--accent-student);
+  box-shadow: 0 0 10px rgba(3, 218, 198, 0.5);
+}
+
+/* Section footer */
+.section-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.footer-cta {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-lg);
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-cta h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.footer-cta p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--accent-admin);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.primary-button span {
+  margin-right: 0.75rem;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+.primary-button:hover i {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 2rem;
+  }
+  
+  .tab-content-container {
+    padding: 1.5rem;
+  }
+  
+  .tab-btn {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .animation-container {
+    height: 350px;
+  }
+  
+  .footer-cta {
+    padding: 2rem 1.5rem;
+  }
+}

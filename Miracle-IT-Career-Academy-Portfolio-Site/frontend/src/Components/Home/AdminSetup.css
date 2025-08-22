@@ -1,0 +1,90 @@
+.admin-setup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.admin-setup-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.admin-setup-card h2 {
+  color: #FF4500;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.setup-message {
+  background-color: #FFF5E6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.setup-message p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.setup-complete {
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.setup-complete p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.setup-button {
+  display: inline-block;
+  background-color: #FF4500;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.setup-button:hover {
+  background-color: #E63900;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+}
+
+.setup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 69, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #FF4500;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

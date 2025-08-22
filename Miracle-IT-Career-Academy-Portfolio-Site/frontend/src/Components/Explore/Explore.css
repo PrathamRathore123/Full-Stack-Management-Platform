@@ -1,0 +1,20 @@
+.explore-container {
+  display: flex;
+  min-height: calc(100vh - 82px);
+  margin-top: 82px;
+  width: 100%;
+}
+
+.sidebar-wrapper {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 82px;
+  height: calc(100vh - 82px);
+}
+
+.explore-content {
+  flex: 1;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}

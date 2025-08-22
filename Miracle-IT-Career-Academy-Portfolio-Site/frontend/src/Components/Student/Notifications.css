@@ -1,0 +1,140 @@
+.notifications-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.notifications-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.title-icon {
+  margin-right: 10px;
+  color: #FF4500;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notification-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.notification-item.unread {
+  border-left: 4px solid #FF4500;
+  background-color: #FFF5F0;
+}
+
+.notification-item.read {
+  border-left: 4px solid #ddd;
+  opacity: 0.8;
+}
+
+.notification-content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.notification-icon {
+  font-size: 20px;
+  color: #666;
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
+.notification-icon.course-icon {
+  color: #4CAF50;
+}
+
+.notification-text {
+  flex: 1;
+}
+
+.notification-title {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.notification-message {
+  margin: 0 0 8px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.mark-read-btn {
+  background: none;
+  border: none;
+  color: #FF4500;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.mark-read-btn:hover {
+  color: #E63900;
+  transform: scale(1.1);
+}
+
+.no-notifications {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  color: #666;
+}
+
+.notifications-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.notifications-error {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .notification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mark-read-btn {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+}

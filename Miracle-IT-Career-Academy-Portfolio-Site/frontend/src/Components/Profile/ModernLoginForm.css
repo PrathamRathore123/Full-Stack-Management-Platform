@@ -1,0 +1,231 @@
+.modern-login-form-container {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modern-login-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--role-color, #FF4500), var(--role-color-light, #FF7F50));
+}
+
+.modern-login-form-container::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.8), transparent 70%);
+  pointer-events: none;
+}
+
+.modern-login-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.modern-login-header h2 {
+  font-size: 2.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.modern-login-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--role-color, #FF4500);
+  border-radius: 2px;
+}
+
+.modern-login-header p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.modern-selected-role {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.modern-selected-role:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.modern-role-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: rgba(var(--role-rgb, 255, 69, 0), 0.1);
+  color: var(--role-color, #FF4500);
+  transition: all 0.3s ease;
+}
+
+.modern-role-badge svg {
+  font-size: 1.4rem;
+}
+
+.modern-change-role-btn {
+  background: transparent;
+  border: none;
+  color: var(--role-color, #FF4500);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 20px;
+}
+
+.modern-change-role-btn:hover {
+  background: rgba(var(--role-rgb, 255, 69, 0), 0.1);
+}
+
+.modern-form-input {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modern-form-input .input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.modern-form-input input {
+  width: 100%;
+  padding: 20px 20px 20px 55px;
+  border: 2px solid #eee;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.modern-form-input input:focus {
+  border-color: var(--role-color, #FF4500);
+  box-shadow: 0 0 0 4px rgba(var(--role-rgb, 255, 69, 0), 0.1);
+  outline: none;
+  background: white;
+}
+
+.modern-form-input input:focus + .input-icon {
+  color: var(--role-color, #FF4500);
+}
+
+.modern-form-input .input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--role-color, #FF4500);
+  transition: all 0.3s ease;
+}
+
+.modern-form-input input:focus ~ .input-highlight {
+  width: 100%;
+}
+
+.modern-login-submit-btn {
+  width: 100%;
+  padding: 20px;
+  background: var(--role-color, #FF4500);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(var(--role-rgb, 255, 69, 0), 0.3);
+}
+
+.modern-login-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.modern-login-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(var(--role-rgb, 255, 69, 0), 0.4);
+}
+
+.modern-login-submit-btn:hover::before {
+  left: 100%;
+}
+
+.modern-login-submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.modern-form-footer {
+  margin-top: 35px;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.modern-form-footer::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: #ddd;
+}

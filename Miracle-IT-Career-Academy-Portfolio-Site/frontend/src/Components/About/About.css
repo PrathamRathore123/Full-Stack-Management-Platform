@@ -1,0 +1,14 @@
+:root {
+  --background-color: #FFFFFF;
+  --primary-color: #FF4500;
+  --secondary-color: #0033CC;
+  --accent-color: #FF7F50;
+  --card-background: #FFF5E6;
+  --cta-button: #FF4500;
+  --text-primary: #000000;
+  --text-secondary: #555555;
+  --shadow-color: rgba(255, 69, 0, 0.3);
+  --transition-standard: all 0.3s ease;
+}
+
+/* Add additional styles here as needed to apply the color theme */

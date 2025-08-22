@@ -1,0 +1,206 @@
+/* Student Fees Styling */
+.student-fee-details {
+  padding: 20px;
+}
+
+.student-fee-details h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.fee-structure-info {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.fee-structure-info h2 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.course-name {
+  color: #666;
+  font-size: 16px;
+}
+
+.payment-summary {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card .amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.summary-card .label {
+  font-size: 14px;
+  color: #666;
+}
+
+.summary-card.total {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.summary-card.paid {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.summary-card.pending {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.next-payment {
+  margin-bottom: 30px;
+}
+
+.next-payment h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.next-due-card {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.due-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.due-description {
+  font-weight: bold;
+  color: #333;
+}
+
+.due-amount {
+  font-weight: bold;
+  color: #f44336;
+}
+
+.due-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.installments-section {
+  margin-bottom: 30px;
+}
+
+.installments-section h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.installments-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.installments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.installments-table th {
+  background-color: #f5f5f5;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+}
+
+.installments-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.installment-row.paid {
+  background-color: #f1f8e9;
+}
+
+.installment-row.pending {
+  background-color: #fff8e1;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.status.paid {
+  color: #4caf50;
+}
+
+.status.pending {
+  color: #ff9800;
+}
+
+.payment-instructions {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.payment-instructions h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-info {
+  margin-top: 10px;
+  color: #666;
+}
+
+.no-fee-structure {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.no-fee-structure h2 {
+  color: #f44336;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .payment-summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .installments-table {
+    font-size: 14px;
+  }
+}

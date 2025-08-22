@@ -1,0 +1,233 @@
+:root {
+  --background-color: #FFFFFF;
+  --primary-color: #FF4500;
+  --secondary-color: #0033CC;
+  --accent-color: #FF7F50;
+  --card-background: #FFF5E6;
+  --cta-button: #FF4500;
+  --text-primary: #000000;
+  --text-secondary: #555555;
+  --shadow-color: rgba(255, 69, 0, 0.3);
+  --transition-standard: all 0.3s ease;
+}
+
+.explore-intro-container {
+  position: relative;
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #FFFFFF;
+}
+
+.explore-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../Images/bg-image-explore.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.explore-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 69, 0, 0.6) 100%);
+  z-index: -1;
+}
+
+.intro-content-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.intro-header-section {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.badge-container {
+  margin-bottom: 1.5rem;
+}
+
+.premium-badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #FFFFFF;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  cursor: pointer;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+}
+
+.sub-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+}
+
+.intro-tagline {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.accent-text {
+  color: var(--accent-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.typing-text {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+}
+
+.typing-text::after {
+  content: '|';
+  position: relative;
+  margin-left: 2px;
+  opacity: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.stats-container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-standard);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .stats-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .stat-box {
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+  }
+  
+  .main-heading {
+    font-size: 2.8rem;
+  }
+  
+  .sub-heading {
+    font-size: 1.5rem;
+  }
+  
+  .intro-tagline {
+    font-size: 1rem;
+  }
+  
+  .typing-text {
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .explore-intro-container {
+    padding: 3rem 1rem;
+  }
+  
+  .main-heading {
+    font-size: 2.2rem;
+  }
+  
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+  
+  .intro-tagline {
+    font-size: 0.9rem;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-box {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .typing-text {
+    min-width: 90px;
+  }
+}

@@ -1,0 +1,355 @@
+/* Modern attendance dashboard styles */
+.dashboard-container {
+  max-width: 1400px;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.attendance-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.attendance-filters select {
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.attendance-filters select:focus {
+  outline: none;
+  border-color: #4a6cf7;
+}
+
+/* Cards */
+.attendance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.attendance-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.attendance-card:hover {
+  transform: translateY(-3px);
+  background-color: #fafafa;
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+}
+
+.working-days-icon {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.present-icon {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.absent-icon {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.percentage-icon {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.percentage-icon.status-excellent {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.percentage-icon.status-good {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.percentage-icon.status-average {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.percentage-icon.status-poor {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #4a6cf7, #6a8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.status-badge.status-excellent {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+}
+
+.status-badge.status-good {
+  background-color: rgba(25, 118, 210, 0.1);
+  color: #1976d2;
+}
+
+.status-badge.status-average {
+  background-color: rgba(255, 143, 0, 0.1);
+  color: #ff8f00;
+}
+
+.status-badge.status-poor {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+}
+
+/* Sections */
+.attendance-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .attendance-sections {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.attendance-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.record-count {
+  background: #f5f5f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Table */
+.attendance-table-container {
+  overflow-x: auto;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+}
+
+.attendance-table th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #555;
+  position: sticky;
+  top: 0;
+  font-size: 0.95rem;
+}
+
+.attendance-table tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.attendance-table tr:last-child {
+  border-bottom: none;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  min-width: 90px;
+}
+
+.present-pill {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+}
+
+.absent-pill {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+}
+
+/* Holidays */
+.holidays-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.holiday-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.holiday-card:hover {
+  background-color: #fafafa;
+  transform: translateY(-2px);
+}
+
+.holiday-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.holiday-name {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Loading and error states */
+.attendance-loading,
+.attendance-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  margin: 2.5rem auto;
+  max-width: 500px;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #4a6cf7;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.retry-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.retry-btn:hover {
+  background-color: #3a5bd9;
+}
+
+.retry-btn:active {
+  transform: translateY(1px);
+}
+
+.no-records {
+  text-align: center;
+  padding: 2.5rem;
+  color: #666;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}

@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #FF4500;
+  --primary-dark: #CC3700;
+  --accent-color: #FF7F50;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --background-light: #F8F9FA;
+  --background-dark: #E9ECEF;
+  --border-color: #DEE2E6;
+}
+
+/* Reset some default styles */
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Loading animation */
+.loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--primary-color);
+  border-color: var(--primary-color) transparent var(--primary-color) transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

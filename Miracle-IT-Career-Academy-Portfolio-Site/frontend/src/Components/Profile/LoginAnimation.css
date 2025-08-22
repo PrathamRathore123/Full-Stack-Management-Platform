@@ -1,0 +1,347 @@
+.login-animation-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Laptop styling */
+.laptop-container {
+  width: 100%;
+  max-width: 500px;
+  perspective: 1500px;
+  margin: 0 auto;
+}
+
+.laptop-top {
+  width: 100%;
+  height: 0;
+  padding-bottom: 65%;
+  background: #333;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  transform-origin: bottom;
+  transform: rotateX(5deg);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.laptop-container:hover .laptop-top {
+  transform: rotateX(10deg);
+}
+
+.laptop-screen {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  right: 3%;
+  bottom: 3%;
+  background: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.laptop-content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.laptop-bottom {
+  width: 120%;
+  height: 15px;
+  background: #444;
+  margin-left: -10%;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.laptop-keyboard {
+  width: 40%;
+  height: 4px;
+  background: #555;
+  margin: 5px auto;
+  border-radius: 2px;
+}
+
+.laptop-touchpad {
+  width: 20%;
+  height: 2px;
+  background: #555;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* Login steps progress */
+.login-steps-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step-indicator {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #999;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.step-indicator.active {
+  background: #FF4500;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(255, 69, 0, 0.3);
+}
+
+.step-line {
+  flex: 1;
+  height: 3px;
+  background: #f0f0f0;
+  margin: 0 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.step-line.active {
+  background: #FF4500;
+}
+
+/* Step content */
+.login-steps-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.step-content {
+  animation: fadeIn 0.5s ease;
+}
+
+.step-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Role selection step */
+.role-icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.role-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.role-icon-wrapper.active {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.role-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.role-icon.admin {
+  background-color: rgba(74, 111, 165, 0.1);
+  color: #4a6fa5;
+}
+
+.role-icon.faculty {
+  background-color: rgba(107, 142, 35, 0.1);
+  color: #6b8e23;
+}
+
+.role-icon.student {
+  background-color: rgba(205, 133, 63, 0.1);
+  color: #cd853f;
+}
+
+.role-icon-wrapper.active .role-icon {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon-wrapper span {
+  font-size: 12px;
+}
+
+/* Credentials step */
+.credentials-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.credential-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+}
+
+.field-icon {
+  color: #999;
+  font-size: 16px;
+}
+
+.field-input {
+  flex: 1;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.typing-effect {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  font-family: monospace;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #FF4500;
+  animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
+  width: 100%;
+}
+
+.typing-effect.password {
+  letter-spacing: 2px;
+}
+
+/* Login button step */
+.login-button-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-login-button {
+  padding: 12px 25px;
+  background: #FF4500;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 1.5s infinite;
+}
+
+.login-pulse {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 69, 0, 0.2);
+  animation: ripple 2s infinite;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #FF4500 }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .laptop-container {
+    max-width: 320px;
+  }
+  
+  .step-indicator {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  
+  .step-content h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .role-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .role-icon-wrapper span {
+    font-size: 10px;
+  }
+  
+  .credential-field {
+    padding: 10px;
+  }
+  
+  .typing-effect {
+    font-size: 12px;
+  }
+  
+  .animated-login-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,19 @@
+.courses-main {
+  width: 100%;
+  padding: 10px;
+  margin-left: 20px;
+  box-sizing: border-box;
+}
+
+.course-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+}

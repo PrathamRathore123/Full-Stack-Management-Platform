@@ -1,0 +1,306 @@
+/* Homesix.css - Enhanced with animations */
+.enrollment-wrapper {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.enrollment-header {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.enrollment-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.enrollment-header span {
+  color: var(--primary-color, #FF4500);
+}
+
+.enrollment-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.enrollment-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Left side - Enrollment info */
+.enrollment-info {
+  flex: 1;
+  text-align: left;
+}
+
+.enrollment-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Scroll animation for list items */
+.enrollment-info li.scroll-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+/* Left direction animation */
+.enrollment-info li.scroll-item.left {
+  transform: translateX(-100px);
+}
+
+/* Right direction animation */
+.enrollment-info li.scroll-item.right {
+  transform: translateX(100px);
+}
+
+/* Visible state for items */
+.enrollment-info li.scroll-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.enrollment-info li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  background: var(--primary-color, #FF4500);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.enrollment-info h3 {
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.enrollment-info p {
+  margin: 0;
+  color: #666;
+}
+
+.enroll-btn {
+  background: var(--primary-color, #FF4500);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  background: #e63e00;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255,69,0,0.2);
+}
+
+/* Right side - Roadmap visual */
+.roadmap-visual {
+  flex: 1;
+  position: relative;
+  height: 500px;
+}
+
+/* S-shape path */
+.roadmap-path.s-shape {
+  position: absolute;
+  width: 70%;
+  height: 80%;
+  left: 15%;
+  top: 10%;
+  border: none;
+  border-right: 3px solid #e0e0e0;
+  border-radius: 0 50px 0 0;
+  border-bottom: 3px solid #e0e0e0;
+  border-left: 3px solid #e0e0e0;
+  border-radius: 0 50px 0 50px;
+}
+
+.roadmap-node {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+/* Position nodes along the S-curve for 6 steps */
+.node-1 {
+  left: 15%;
+  top: 5%;
+}
+
+.node-2 {
+  left: 85%;
+  top: 20%;
+}
+
+.node-3 {
+  left: 15%;
+  top: 40%;
+}
+
+.node-4 {
+  left: 85%;
+  top: 60%;
+}
+
+.node-5 {
+  left: 15%;
+  top: 80%;
+}
+
+.node-6 {
+  left: 85%;
+  top: 95%;
+}
+
+.step-circle {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #666;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+/* Animation for active step circle */
+.roadmap-node.active .step-circle {
+  background: var(--primary-color, #FF4500);
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px rgba(255,69,0,0.2);
+}
+
+.step-circle.animate {
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.step-box {
+  position: absolute;
+  width: 150px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* Position boxes relative to nodes */
+.node-1 .step-box, .node-3 .step-box, .node-5 .step-box {
+  left: 60px;
+  top: 0;
+}
+
+.node-2 .step-box, .node-4 .step-box, .node-6 .step-box {
+  right: 60px;
+  top: 0;
+}
+
+.roadmap-node.active .step-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-box h3 {
+  color: var(--primary-color, #FF4500);
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.step-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .enrollment-content {
+    flex-direction: column;
+  }
+  
+  .roadmap-visual {
+    height: 500px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .enrollment-header h2 {
+    font-size: 2rem;
+  }
+  
+  .enrollment-info li {
+    padding: 1rem;
+  }
+  
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .roadmap-visual {
+    height: 450px;
+  }
+  
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .step-box {
+    width: 120px;
+    padding: 0.8rem;
+  }
+}
