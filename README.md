@@ -1,4 +1,4 @@
-# Miracle IT Career Academy Portfolio Site
+# Full Stack Management Platform
 
 A comprehensive Django + React web application for managing an IT training academy with student management, course enrollment, fee tracking, attendance system, and AI-powered chatbot.
 
@@ -307,3 +307,4 @@ This project is proprietary software developed for Miracle IT Career Academy. Al
 **Version**: 1.0.0  
 **Last Updated**: 2024  
 **Status**: Production Ready
+
